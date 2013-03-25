@@ -1,3 +1,5 @@
-<h1>Welcome, <%= user_signed_in? ? current_user.username : "Guest" %>.</h1>
+<div class="hero-unit">
+  <h1>Welcome, <%= user_signed_in? ? current_user.username : "Guest" %>.</h1>
 
-<%= render 'dashboard/shared/links' %>
+  <%= render 'dashboard/shared/links' %>
+</div>
