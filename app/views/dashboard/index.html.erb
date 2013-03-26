@@ -1,5 +1,13 @@
 <div class="hero-unit">
   <h1>Welcome, <%= user_signed_in? ? current_user.username : "Guest" %>.</h1>
 
-  <%= render 'dashboard/shared/links' %>
+  <%= link_to "Add Zipmark", new_mark_path, :class => 'btn btn-primary' if user_signed_in? %>
+</div>
+
+<div class="container">
+  <% if user_signed_in? %>
+    <ul>
+      <%= render @marks %>
+    </ul>
+  <% end %>
 </div>

@@ -1,0 +1,28 @@
+<%= form_for(@mark) do |f| %>
+  <% if @mark.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mark.errors.count, "error") %> occurred.</h2>
+      <ul> 
+        <% @mark.errors.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :tag %>
+    <%= f.text_field :tag %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Add Zipmark" %>
+  </div>
+<% end %>

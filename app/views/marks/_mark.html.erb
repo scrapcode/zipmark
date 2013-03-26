@@ -1,0 +1,6 @@
+<li>
+ <%= link_to mark.title, mark.url %>
+  <% if mark.user == current_user %>
+    - <%= link_to "Delete?", mark, :method => :delete, :prompt => "Are you sure?" %>
+  <% end %>
+</li>
