@@ -1,13 +1,33 @@
-<div class="hero-unit">
-  <h1>Welcome, <%= user_signed_in? ? current_user.username : "Guest" %>.</h1>
-
-  <%= link_to "Add Zipmark", new_mark_path, :class => 'btn btn-primary' if user_signed_in? %>
-</div>
 
 <div class="container">
+  <h1>Welcome, <%= user_signed_in? ? current_user.username : "Guest" %>.</h1>
+  <p>We're glad to have you back.</p>
   <% if user_signed_in? %>
-    <ul>
-      <%= render @marks %>
-    </ul>
+  <%= link_to "Add Zipmark", new_mark_path, :class => 'btn btn-primary pull-right' if user_signed_in? %>
+
+<div class="btn-group">
+  <button class="btn">Sort by tag</button>
+  <button class="btn dropdown-toggle" data-toggle="dropdown">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <!-- dropdown menu links -->
+    <li>Cat 1</li>
+    <li>Cat 2</li>
+  </ul>
+</div>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <td>Zipmark</td>
+          <td>Tags</td>
+          <td>Options</td>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @marks %>
+      </tbody>
+    </table>
   <% end %>
 </div>
