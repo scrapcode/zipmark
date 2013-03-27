@@ -4,6 +4,7 @@ gem 'rails', '3.2.12'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'acts-as-taggable-on', '~> 2.3.1'
 
 group :development do
   gem 'sqlite3'

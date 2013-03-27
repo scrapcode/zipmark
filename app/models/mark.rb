@@ -4,4 +4,6 @@ class Mark < ActiveRecord::Base
 
   validates :url, :presence => true
   validates :title, :length => 3..140, :presence => true
+
+  acts_as_taggable
 end
