@@ -4,4 +4,6 @@ Zipmark::Application.routes.draw do
   resources :marks, :only => [:new, :create, :destroy]
 
   root :to => 'dashboard#index'
+
+  match '/tags/:tag' => 'dashboard#sort_by_tag'
 end

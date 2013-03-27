@@ -19,7 +19,10 @@
     <%= f.text_field :url %>
   </div>
 
-  <%= render :partial => 'tags/form', :locals => { :form => f } %>
+  <div class="field">
+    <%= form.label :tag_list, 'Tags' %> <small>(comma seperated)</small><br />
+    <%= form.text_field :tag_list, :value => @mark.tags_listing %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Add Zipmark" %>

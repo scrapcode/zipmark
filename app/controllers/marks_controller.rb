@@ -6,11 +6,20 @@ class MarksController < ApplicationController
   end
 
   def create
+    # using https://github.com/mbleigh/acts-as-taggable-on
+    #
+    # this successfully creates the tags in :tags
+    # however, it doesn't add the ownership relationship to current_user
+    
     @mark = current_user.marks.build(params[:mark])
     tags = params[:mark][:tag_list]
     if @mark.save
 
-      current_user.tag(@mark, :with => tags, :on => :tags)
+      # This creates the correct tags, as well as the correct ownership
+      # relations, however calling this afterwards creates 2 different relationships.
+      # If I don't do this, the tag wont show up in @user.owned_tags
+      #
+      # current_user.tag(@mark, :with => tags, :on => :tags)
 
       flash[:notice] = "Zip Mark saved!\n" + tags.to_s
       redirect_to root_path
@@ -23,6 +32,6 @@ class MarksController < ApplicationController
     @mark = current_user.marks.find(params[:id])
     @mark.destroy
 
-    redirect_to root_path
+    redirect_to request.referer
   end
 end

@@ -6,12 +6,4 @@ class Mark < ActiveRecord::Base
   validates :title, :length => 3..140, :presence => true
 
   acts_as_taggable
-
-  def tags_listing=(tag_list)
-    current_user.tag(self, :with => tag_list, :on => :tags)
-  end
-
-  def tags_listing
-    self.tag_list.join(',')
-  end
 end
