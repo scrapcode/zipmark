@@ -9,6 +9,8 @@ class MarksController < ApplicationController
     @mark = current_user.marks.build(params[:mark])
 
     if @mark.save
+      # tags = params[:mark][:tags]
+
       flash[:notice] = "Zip Mark saved!"
       redirect_to root_path
     else
