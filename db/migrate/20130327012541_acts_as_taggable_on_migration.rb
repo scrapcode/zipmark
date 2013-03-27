@@ -1,8 +1,5 @@
 class ActsAsTaggableOnMigration < ActiveRecord::Migration
   def self.up
-    drop_table :taggings
-    drop_table :tags
-
     create_table :tags do |t|
       t.string :name
     end
