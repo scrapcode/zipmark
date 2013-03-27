@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20130327012541) do
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "tag_id"
   end
 
   add_index "marks", ["url"], :name => "index_marks_on_url"

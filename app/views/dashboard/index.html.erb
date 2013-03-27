@@ -12,8 +12,9 @@
   </button>
   <ul class="dropdown-menu">
     <!-- dropdown menu links -->
-    <li>Cat 1</li>
-    <li>Cat 2</li>
+    <% current_user.owned_tags.each do |tag| %>
+      <li><%= tag %></li>
+    <% end %>
   </ul>
 </div>
 

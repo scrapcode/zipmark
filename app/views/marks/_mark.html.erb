@@ -1,6 +1,10 @@
 <tr>
   <td><%= link_to mark.title, mark.url %></td>
-  <td><%= mark.tag %></td>
+  <td>
+    <% mark.tag_list.each do |tag| %>
+      <span class="badge badge-info"><%= tag %></span>
+    <% end %>
+  </td>
   <td>
     <% if mark.user == current_user %>
       <%= link_to "Delete?", mark, :method => :delete, :prompt => "Are you sure?", :class => 'btn btn-danger btn-mini' %>

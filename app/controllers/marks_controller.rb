@@ -7,11 +7,12 @@ class MarksController < ApplicationController
 
   def create
     @mark = current_user.marks.build(params[:mark])
-
+    tags = params[:mark][:tag_list]
     if @mark.save
-      # tags = params[:mark][:tags]
 
-      flash[:notice] = "Zip Mark saved!"
+      current_user.tag(@mark, :with => tags, :on => :tags)
+
+      flash[:notice] = "Zip Mark saved!\n" + tags.to_s
       redirect_to root_path
     else
       render :action => 'new'

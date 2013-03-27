@@ -4,6 +4,6 @@ class RemoveTagFromMarks < ActiveRecord::Migration
   end
 
   def down
-    add_column :marks, :tag
+    add_column :marks, :tag, :string
   end
 end

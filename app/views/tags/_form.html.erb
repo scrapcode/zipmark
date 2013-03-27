@@ -1,6 +1,4 @@
-<%= form.fields_for :tags do |tag_form| %>
   <div class="field">
-    <%= tag_form.label :tags, 'Tags' %> <small>(comma seperated)</small><br />
-    <%= tag_form.text_field :mark, :tag_list, :value => @post.tag_list %>
+    <%= form.label :tag_list, 'Tags' %> <small>(comma seperated)</small><br />
+    <%= form.text_field :tag_list, :value => @mark.tags_listing %>
   </div>
-<% end %>
