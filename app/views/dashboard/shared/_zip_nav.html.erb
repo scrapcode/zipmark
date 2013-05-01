@@ -13,3 +13,15 @@
   <% end %>
   </ul>
 </div>
+
+<% if @tag %>
+  <div class="btn-group">
+    <% if params[:action] == "show_user_tags" %>
+      <%= link_to "Just me", tag_path(params[:tag]), :class => "btn active" %>
+      <%= link_to "Everyone", all_tag_path(params[:tag]), :class => "btn" %>
+    <% elsif params[:action] == "show_all_tags" %>
+      <%= link_to "Just me", tag_path(params[:tag]), :class => "btn" %>
+      <%= link_to "Everyone", all_tag_path(params[:tag]), :class => "btn active" %>
+    <% end %>
+  </div>
+<% end %>
