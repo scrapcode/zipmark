@@ -1,0 +1,15 @@
+  <%= link_to "Add Zipmark", new_mark_path, :class => 'btn btn-primary pull-right' if user_signed_in? %>
+
+<div class="btn-group">
+  <button class="btn">Sort by tag</button>
+  <button class="btn dropdown-toggle" data-toggle="dropdown">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <!-- dropdown menu links -->
+    <li><%= link_to "All", root_path %></li>
+  <% current_user.owned_tags.each do |tag| %>
+    <li><%= link_to tag, tag_path(tag.to_s) %></li>
+  <% end %>
+  </ul>
+</div>

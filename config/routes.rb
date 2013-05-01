@@ -5,5 +5,5 @@ Zipmark::Application.routes.draw do
 
   root :to => 'dashboard#index'
 
-  match '/tags/:tag' => 'dashboard#sort_by_tag'
+  match '/tags/:tag' => 'dashboard#sort_by_tag', as: :tag
 end

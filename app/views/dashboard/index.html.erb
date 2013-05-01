@@ -1,23 +1,6 @@
-
 <div class="container">
-  <h1>Welcome, <%= user_signed_in? ? current_user.username : "Guest" %>.</h1>
-  <p>We're glad to have you back.</p>
   <% if user_signed_in? %>
-  <%= link_to "Add Zipmark", new_mark_path, :class => 'btn btn-primary pull-right' if user_signed_in? %>
-
-<div class="btn-group">
-  <button class="btn">Sort by tag</button>
-  <button class="btn dropdown-toggle" data-toggle="dropdown">
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu">
-    <!-- dropdown menu links -->
-    <% current_user.owned_tags.each do |tag| %>
-      <li><%= tag %></li>
-    <% end %>
-  </ul>
-</div>
-
+    <%= render 'dashboard/shared/zip_nav' %>
     <%= render 'marks/show_marks' %>
   <% end %>
 </div>
