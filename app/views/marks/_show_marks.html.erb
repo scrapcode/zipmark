@@ -7,6 +7,17 @@
     </tr>
   </thead>
   <tbody>
-    <%= render @marks %>
+    <% if @marks.count > 0 %>
+      <%= render @marks %>
+    <% else %>
+      <tr>
+        <td colspan="3" style="text-align: center">
+          <p>
+            You don't have any Zipmarks!
+          </p>
+          <%= link_to "Add Your First Zipmark!", new_mark_path, :class => 'btn-large btn-primary'%>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
