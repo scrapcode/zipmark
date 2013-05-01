@@ -1,5 +1,7 @@
-== ZipMark
+# ZipMark
+### By (Cam Tyler)[codectc@gmail.com]
+-------------------------------------
 
-Cloud bookmarking platform
+Bookmarking.
 
-(Cam Tyler)[codectc@gmail.com]
+Uses (acts_as_taggable_on)[https://github.com/mbleigh/acts-as-taggable-on] for tagging functionality.
