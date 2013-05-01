@@ -7,7 +7,15 @@
   </td>
   <td>
     <% if mark.user == current_user %>
-      <%= link_to "Delete?", mark, :method => :delete, :prompt => "Are you sure?", :class => 'btn btn-danger btn-mini' %>
+      <div class="btn-group">
+        <button class="btn btn-mini pull-right dropdown-toggle" data-toggle="dropdown">
+          Options <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <!-- dropdown menu links -->
+          <li><%= link_to "Delete", mark, :method => :delete, :confirm => "Are you sure?", :class => "btn btn-mini btn-danger" %></li>
+        </ul>
+      </div>
     <% end %>
   </td>
 </tr>

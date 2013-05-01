@@ -10,4 +10,9 @@ class DashboardController < ApplicationController
     @marks = current_user.marks.tagged_with(@tag, :owned_by => current_user)
     render 'index'
   end
+
+  def add_mark
+    @url = params[:url]
+    @title = params[:title]
+  end
 end
