@@ -7,6 +7,6 @@ class DashboardController < ApplicationController
 
   def sort_by_tag
     @tag = params[:tag]
-    @marks = current_user.marks.tagged_with(@tag)
+    @marks = current_user.marks.tagged_with(@tag, :owned_by => current_user)
   end
 end
