@@ -1,5 +1,5 @@
 # ZipMark
-### By (Cam Tyler)[codectc@gmail.com]
+By [Cam Tyler](codectc@gmail.com)
 -------------------------------------
 
 'Cloud' Bookmarking.
