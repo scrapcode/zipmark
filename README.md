@@ -2,6 +2,6 @@
 ### By (Cam Tyler)[codectc@gmail.com]
 -------------------------------------
 
-Bookmarking.
+'Cloud' Bookmarking.
 
-Uses (acts_as_taggable_on)[https://github.com/mbleigh/acts-as-taggable-on] for tagging functionality.
+- Uses [acts_as_taggable_on](https://github.com/mbleigh/acts-as-taggable-on)
