@@ -12,16 +12,16 @@
 
   <div class="field">
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :value => ("#{params[:title]}" or '') %>
   </div>
   <div class="field">
     <%= f.label :url %>
-    <%= f.text_field :url %>
+    <%= f.text_field :url, :value => ("#{params[:url]}" or '') %>
   </div>
 
   <div class="field">
     <%= f.label :tag_list, 'Tags' %> <small>(comma seperated)</small><br />
-    <%= f.text_field :tag_list, :value => @mark.tag_list %>
+    <%= f.text_field :tag_list, :value => @mark.tag_list, :autofocus => true %>
   </div>
 
   <div class="actions">
