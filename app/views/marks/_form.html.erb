@@ -1,3 +1,6 @@
+<% if params[:remote] %>
+<div align="center">
+<% end %>
 <%= form_for(@mark) do |f| %>
   <% if @mark.errors.any? %>
     <div id="error_explanation">
@@ -27,7 +30,10 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Add Zipmark" %>
+    <%= f.submit "Add Zipmark", :class => 'btn btn-primary btn-large' %>
   </div>
 
+<% end %>
+<% if params[:remote] %>
+</div>
 <% end %>
