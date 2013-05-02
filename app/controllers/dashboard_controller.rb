@@ -1,8 +1,12 @@
 class DashboardController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:index, :lander]
 
   def index
-    @marks = current_user.marks.order("created_at DESC")
+    if user_signed_in?
+      @marks = current_user.marks.order("created_at DESC")
+    else
+      render 'lander'
+    end
   end
 
   def show_user_tags
@@ -23,5 +27,9 @@ class DashboardController < ApplicationController
   def add_mark
     @url = params[:url]
     @title = params[:title]
+  end
+
+  def lander
+
   end
 end

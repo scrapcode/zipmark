@@ -1,3 +1,4 @@
+<% if @marks.count > 0 %>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -7,17 +8,15 @@
     </tr>
   </thead>
   <tbody>
-    <% if @marks.count > 0 %>
-      <%= render @marks %>
-    <% else %>
-      <tr>
-        <td colspan="3" style="text-align: center">
-          <p>
-            You don't have any Zipmarks!
-          </p>
-          <%= link_to "Add Your First Zipmark!", new_mark_path, :class => 'btn-large btn-primary'%>
-        </td>
-      </tr>
-    <% end %>
+    <%= render @marks %>
   </tbody>
 </table>
+<% else %>
+<div class="container">
+  <div class="hero-unit">
+    <h1>Let's start Zipmarking.</h1>
+    <p>1. Drag the <a href="javascript:(function(){var%20a=window,b=document,c=encodeURIComponent,d=a.open('http://zipmark.herokuapp.com/marks/new/'+c(b.title)+'/'+c(b.location),'bkmk_popup','left='+((a.screenX||a.screenLeft)+10)+',top='+((a.screenY||a.screenTop)+10)+',height=510px,width=550px,resizable=1,alwaysRaised=1');a.setTimeout(function(){d.focus()},300)})();" class="btn btn-large btn-success">Zipmark It!</a> button into your bookmarks toolbar.</p>
+    <p>2. Come across something you love, Zipmark it, and I'll keep it around.</p>
+  </div>
+</div>
+<% end %>

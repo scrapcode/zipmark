@@ -1,5 +1,5 @@
 <tr>
-  <td><%= link_to mark.title, mark.url %></td>
+  <td><%= link_to mark.title, mark.url, :target => '_blank' %></td>
   <td>
     <% mark.tag_list.each do |tag| %>
       <span class="badge badge-info"><%= link_to tag, tag_path(tag.to_s) %></span>

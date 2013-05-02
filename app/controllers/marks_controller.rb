@@ -21,8 +21,12 @@ class MarksController < ApplicationController
       #
       current_user.tag(@mark, :with => tags, :on => :tags)
 
-      flash[:notice] = "Zip Mark saved!\n" + tags.to_s
-      redirect_to root_path
+      flash[:notice] = "Zipmark saved!"
+      if params[:remote] = true
+        render :close
+      else
+        redirect_to root_path
+      end
     else
       render :action => 'new'
     end

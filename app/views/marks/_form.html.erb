@@ -10,6 +10,8 @@
     </div>
   <% end %>
 
+  <%= hidden_field :remote, :value => 'true' if params[:remote] %>
+
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title, :value => ("#{params[:title]}" or '') %>
@@ -27,4 +29,5 @@
   <div class="actions">
     <%= f.submit "Add Zipmark" %>
   </div>
+
 <% end %>
