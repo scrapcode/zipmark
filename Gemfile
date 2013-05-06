@@ -11,6 +11,12 @@ group :development do
   gem 'debugger'
 end
 
+group :test do
+  gem 'faker'
+  gem 'capybara'
+  gem 'database_cleaner'
+end
+
 group :production do
   gem 'pg'
 end
