@@ -1,7 +1,13 @@
-# ZipMark
+ZipMark
+=======
 
 By [Cam Tyler](mailto:codectc@gmail.com)
 -------------------------------------
+
+### Note
+This is no longer supported. I have recoded ZipMark into a new repository using Rails 4+, and dropping acts_as_taggable_on. Check it out:
+
+[Bookmarkr](https://github.com/scrapcode/bookmarkr)
 
 'Cloud' Bookmarking.
 
